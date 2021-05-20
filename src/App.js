@@ -6,8 +6,8 @@ import Nav from './Components/Nav/Nav'
 function App() {
   return (
     <div className='App'>
-      {routes}
       <Nav />
+      {routes}
     </div>
   )
 };

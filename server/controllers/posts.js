@@ -52,6 +52,7 @@ module.exports = {
     readPost: (req, res) => {
       req.app.get('db').post.read_post(req.params.id)
         .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
+        .catch((err) => console.log(err))
     },
     deletePost: (req, res) => {
       req.app.get('db').post.delete_post(req.params.id)

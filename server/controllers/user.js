@@ -10,7 +10,7 @@ module.exports = {
         }
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
-        const [user] = await db.user.create_user(username, hash)
+        const [user] = await db.user.create_user(username, hash, `https://robohash.org/${username}.png`)
         delete user.password
         req.session.user = user
         return res.status(200).send(req.session.user)

@@ -1,6 +1,6 @@
 const initialState = {
     username: '',
-    profilePicture: ''
+    profile_pic: ''
 }
 const UPDATE_USER = 'UPDATE_USER'
 const LOGOUT_USER = 'LOGOUT_USER' 
@@ -19,9 +19,9 @@ export function logout(){
 export default function reducer(state = initialState, action){
     switch(action.type){
         case UPDATE_USER:
-            return {...state, user: action.payload}
+            return {...state, username: action.payload.username, profile_pic: action.payload.profile_pic}
         case LOGOUT_USER:
-            return {...state, user: action.payload}
+            return {...state, username: action.payload, profile_pic: action.payload}
         default:
             return {...state}
     }

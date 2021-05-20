@@ -1,3 +1,3 @@
 DELETE
 FROM helo_posts
-WHERE id = $5;
+WHERE id = $1;
